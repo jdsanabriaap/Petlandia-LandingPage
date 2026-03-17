@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club House Petlandia | Hotel, Guardería y Spa en Madrid, Cundinamarca</title>
+  <meta name="description" content="El mejor cuidado para tu mascota en la Sabana. Hotel canino y felino, Guardería, Spa profesional. ¡Reserva ahora!">
+  <meta name="keywords" content="Hotel canino Madrid Cundinamarca, guardería para perros, guardería felina, spa de mascotas, groomer mascotas Sabana, peluquería canina Madrid">
+  <link rel="icon" type="image/png" href="./assets/gallery/Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Roboto+Rounded:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --background-base:#E0F7FA;
+      --background-accent:#00E5FF;
+      --pop-pink:#FF1493;
+      --pop-orange:#FF8C00;
+      --pop-lila:#E6E6FA;
+      --pop-mint:#98FF98;
+      --deep-purple:#4B0082;
+      --dark-text:#008080;
+      --text-primary:#FFFFFF;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{font-family:'Roboto Rounded',sans-serif;color:var(--dark-text);background:var(--background-base);line-height:1.6;overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none}
+    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <a href="#hero" class="visually-hidden">Saltar al contenido principal</a>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="#" class="header__logo" aria-label="Club House Petlandia - Inicio">
+        <img src="./assets/gallery/Logo.png" alt="Club House Petlandia" width="280" height="100" loading="eager">
+      </a>
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="#hero" class="nav__link">Inicio</a></li>
+          <li><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="#por-que" class="nav__link">Nosotros</a></li>
+          <li><a href="#galeria" class="nav__link">Clientes</a></li>
+          <li><a href="#resenas" class="nav__link">Reseñas</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="header__menu-btn" aria-label="Abrir menú" aria-expanded="false">
+        <span class="header__menu-bar"></span>
+        <span class="header__menu-bar"></span>
+        <span class="header__menu-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero__bg">
+        <img src="./assets/gallery/Hero.png" alt="Patio de Club House Petlandia con perros jugando" width="1920" height="1080" fetchpriority="high">
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">
+          <img src="./assets/gallery/ClubHouse.png" alt="Club House Petlandia: El paraíso diseñado para el bienestar de tu mascota" width="800" height="240" loading="eager">
+        </h1>
+        <p class="hero__subtitle">Guardería, Hotel y Spa en Madrid, Cundinamarca. Un espacio integral donde la diversión y el cuidado profesional se encuentran.</p>
+        <div class="hero__cta">
+          <a href="#" id="cta-whatsapp" class="btn btn--whatsapp">Agendar por WhatsApp</a>
+          <a href="#servicios" class="btn btn--secondary">Ver nuestros servicios</a>
+        </div>
+      </div>
+    </section>
+
+    <a href="#" id="floating-whatsapp" class="floating-cta" aria-label="Agendar por WhatsApp">
+      <img src="./assets/icons/whatsapp.svg" alt="" class="floating-cta__icon-img" width="24" height="24">
+      <span class="floating-cta__icon">Agendar</span>
+    </a>
+
+    <section id="servicios" class="services">
+      <h2 class="section-title">Nuestros Servicios Integrales</h2>
+      <div class="services__grid">
+        <article class="card-flip" tabindex="0">
+          <div class="card-flip__inner">
+            <div class="card-flip__front card">
+              <div class="card__icon card__icon--dog">🐕</div>
+              <h3 class="card__title">Guardería Canina</h3>
+              <p class="card__text">Socialización segura y juego supervisado para que tu perro nunca se sienta solo.</p>
+              <img src="./assets/gallery/PatioPrincipal.jpeg" alt="Sala de guardería canina" class="card__img" loading="lazy" width="400" height="300">
+              <p class="card__hint">Haz clic para más información</p>
+            </div>
+            <div class="card-flip__back card">
+              <p class="card__back-text">Zonas amplias sin jaulas, camas elevadas y supervisión constante. Ideal para perros de todas las razas y tamaños. Horarios flexibles por horas o días completos.</p>
+              <a href="#" class="btn btn--whatsapp btn-agendar" data-servicio="Guardería Canina">Agendar</a>
+            </div>
+          </div>
+        </article>
+        <article class="card-flip" tabindex="0">
+          <div class="card-flip__inner">
+            <div class="card-flip__front card">
+              <div class="card__icon card__icon--cat">🐱</div>
+              <h3 class="card__title">Guardería Felina</h3>
+              <p class="card__text">Espacio dedicado y tranquilo para gatos, con zonas de descanso y juego.</p>
+              <div class="card__placeholder" aria-hidden="true">Próximamente</div>
+              <p class="card__hint">Haz clic para más información</p>
+            </div>
+            <div class="card-flip__back card">
+              <p class="card__back-text">Áreas separadas para mininos, con estructuras de escalada, escondites y ventanas al exterior. Atención personalizada para que tu gato se sienta como en casa.</p>
+              <a href="#" class="btn btn--whatsapp btn-agendar" data-servicio="Guardería Felina">Agendar</a>
+            </div>
+          </div>
+        </article>
+        <article class="card-flip" tabindex="0">
+          <div class="card-flip__inner">
+            <div class="card-flip__front card">
+              <div class="card__icon card__icon--spa">🛁</div>
+              <h3 class="card__title">Plan Pasadía</h3>
+              <p class="card__text">La dosis perfecta de diversión y ejercicio para un día diferente y activo.</p>
+              <video class="card__video" src="./assets/gallery/Pasadia.mp4" muted loop playsinline autoplay width="400" height="300" aria-label="Video del Plan Pasadía"></video>
+              <p class="card__hint">Haz clic para más información</p>
+            </div>
+            <div class="card-flip__back card">
+              <p class="card__back-text">Déjalos jugar y socializar por unas horas. Incluye supervisión, hidratación y reporte fotográfico. Perfecto para mascotas activas que necesitan quemar energía.</p>
+              <a href="#" class="btn btn--whatsapp btn-agendar" data-servicio="Plan Pasadía">Agendar</a>
+            </div>
+          </div>
+        </article>
+        <article class="card-flip" tabindex="0">
+          <div class="card-flip__inner">
+            <div class="card-flip__front card">
+              <div class="card__icon card__icon--spa">🛁</div>
+              <h3 class="card__title">Grooming y SPA</h3>
+              <p class="card__text">Peluquería profesional, baños relajantes y mimos con productos premium.</p>
+              <img src="./assets/gallery/Spa.webp" alt="Área de grooming y spa" class="card__img" loading="lazy" width="400" height="300">
+              <p class="card__hint">Haz clic para más información</p>
+            </div>
+            <div class="card-flip__back card">
+              <p class="card__back-text">Baños, corte de uñas, limpieza de oídos, cepillado y perfume. Peluquería canina con productos de alta calidad. También ofrecemos combos con guardería.</p>
+              <a href="#" class="btn btn--whatsapp btn-agendar" data-servicio="Grooming y SPA">Agendar</a>
+            </div>
+          </div>
+        </article>
+        <article class="card-flip" tabindex="0">
+          <div class="card-flip__inner">
+            <div class="card-flip__front card">
+              <div class="card__icon card__icon--shop">🛒</div>
+              <h3 class="card__title">Pet Shop</h3>
+              <p class="card__text">Accesorios exclusivos y snacks saludables seleccionados para los más consentidos.</p>
+              <img src="./assets/gallery/PetShop.jpg" alt="Área de pet shop" class="card__img" loading="lazy" width="400" height="300">
+              <p class="card__hint">Haz clic para más información</p>
+            </div>
+            <div class="card-flip__back card">
+              <p class="card__back-text">Collares, correas, juguetes, snacks naturales y alimentos premium. Todo lo que necesitas para consentir a tu mascota en un solo lugar.</p>
+              <a href="#" class="btn btn--whatsapp btn-agendar" data-servicio="Pet Shop">Agendar</a>
+            </div>
+          </div>
+        </article>
+        <article class="card-flip" tabindex="0">
+          <div class="card-flip__inner">
+            <div class="card-flip__front card">
+              <div class="card__icon card__icon--party">🎂</div>
+              <h3 class="card__title">Celebración de Cumpleaños</h3>
+              <p class="card__text">¡Fiestas temáticas inolvidables! Torta, decoración y mucha diversión.</p>
+              <div class="card__placeholder" aria-hidden="true">Próximamente</div>
+              <p class="card__hint">Haz clic para más información</p>
+            </div>
+            <div class="card-flip__back card">
+              <p class="card__back-text">Incluye torta apta para mascotas, decoración temática, invitaciones para amigos peludos y recuerdos fotográficos. Reserva con anticipación.</p>
+              <a href="#" class="btn btn--whatsapp btn-agendar" data-servicio="Celebración de Cumpleaños">Agendar</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="why-us" id="por-que">
+      <h2 class="section-title">Por qué elegirnos</h2>
+      <div class="why-us__intro">
+        <p class="why-us__philosophy">En Club House Petlandia creemos que cada mascota merece un lugar donde sentirse segura, querida y parte de una familia. No somos solo un servicio de guardería o grooming: somos el segundo hogar de tu mejor amigo. Nuestra filosofía se basa en el bienestar integral, la socialización positiva y el cuidado profesional con corazón. Cada día trabajamos para que tu mascota disfrute al máximo mientras tú disfrutas la tranquilidad de saber que está en las mejores manos.</p>
+      </div>
+      <div class="why-us__grid">
+        <div class="why-us__item">
+          <div class="why-us__icon"><img src="./assets/icons/paw.svg" alt="" aria-hidden="true" width="48" height="48"></div>
+          <h3 class="why-us__title">Confianza</h3>
+          <p class="why-us__text">Monitoreo activo y personal que ama lo que hace.</p>
+        </div>
+        <div class="why-us__item">
+          <div class="why-us__icon"><img src="./assets/icons/paw.svg" alt="" aria-hidden="true" width="48" height="48"></div>
+          <h3 class="why-us__title">Espacio</h3>
+          <p class="why-us__text">Instalaciones diseñadas para el descanso real (sin jaulas estresantes).</p>
+        </div>
+        <div class="why-us__item">
+          <div class="why-us__icon"><img src="./assets/icons/paw.svg" alt="" aria-hidden="true" width="48" height="48"></div>
+          <h3 class="why-us__title">Comunidad</h3>
+          <p class="why-us__text">Más que un servicio, somos el club social de tu mascota.</p>
+        </div>
+      </div>
+
+      <div class="spaces" id="espacios">
+        <h3 class="spaces__title">Conoce nuestros espacios</h3>
+        <div class="spaces__content">
+          <p class="spaces__text">El lugar está diseñado para el bienestar de perros y gatos de forma separada y segura:</p>
+          <ol class="spaces__list">
+            <li><strong>Entrada:</strong> Nuestro Pet Shop, donde encontrarás accesorios y snacks para consentir a tu mascota.</li>
+            <li><strong>Zona de Spa:</strong> Área de grooming con baños, peluquería y cuidados profesionales.</li>
+            <li><strong>Dos salas principales:</strong>
+              <ul>
+                <li><strong>Sala 1:</strong> Conecta directamente con el <strong>patio exterior</strong>, ideal para jugar y tomar el sol.</li>
+                <li><strong>Sala 2:</strong> Da al <strong>patio interior</strong> y comunica con la zona de gatos.</li>
+              </ul>
+            </li>
+            <li><strong>Patios:</strong> Las salas y patios son espacios exclusivos para perros, con supervisión constante.</li>
+            <li><strong>Zona de gatos:</strong> Acceso a través de la Sala 2 por un espacio de doble puerta, garantizando la seguridad y tranquilidad de los mininos.</li>
+          </ol>
+        </div>
+        <div class="spaces__images">
+          <figure class="spaces__card">
+            <div class="spaces__card-inner">
+              <img src="./assets/gallery/PatioPrincipal.jpeg" alt="Patio exterior de Club House Petlandia" loading="lazy">
+            </div>
+          </figure>
+          <figure class="spaces__card">
+            <div class="spaces__card-inner">
+              <img src="./assets/gallery/Spa.webp" alt="Patio exterior de Club House Petlandia" loading="lazy">
+            </div>
+          </figure>
+          <figure class="spaces__card">
+            <div class="spaces__card-inner">
+              <img src="./assets/gallery/Sala%20Canina%201.jpeg" alt="Sala de espera para dueños" loading="lazy">
+            </div>
+          </figure>
+          <figure class="spaces__card">
+            <div class="spaces__card-inner">
+              <img src="./assets/gallery/Sala%20Canina%202.jpeg" alt="Área de descanso canina con camas elevadas" loading="lazy">
+            </div>
+          </figure>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="gallery">
+      <h2 class="section-title">Nuestros Clientes Felices</h2>
+      <p class="gallery__intro">Fotos y momentos compartidos por familias de la Sabana. <em>¿Quieres aparecer aquí?</em> Etiquétanos en Instagram <a href="https://www.instagram.com/petlandia_clubhouse" target="_blank" rel="noopener noreferrer">@petlandia_clubhouse</a></p>
+      <div class="gallery__zones">
+        <div class="gallery__zone">
+          <h3 class="gallery__zone-title">Perros</h3>
+          <div class="gallery__grid gallery__grid--dogs">
+            <!-- Cliente 1: Cambia src por tu imagen (ej: foto descargada de Instagram → assets/gallery/cliente1.jpg) -->
+            <div class="gallery-flip" tabindex="0">
+              <div class="gallery-flip__inner">
+                <div class="gallery-flip__front gallery__slot">
+                  <img src="./assets/gallery/perro-1.png" alt="Perro jugando en guardería canina Club House Petlandia Madrid Cundinamarca" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
+                  <div class="gallery__placeholder gallery__placeholder--visible">🐕</div>
+                </div>
+                <div class="gallery-flip__back">
+                  <p class="gallery-flip__desc">«¡El mejor día de la semana! Socializando en el patio exterior de la guardería canina en Madrid, Cundinamarca. Club House Petlandia lo tiene todo.»</p>
+                </div>
+              </div>
+            </div>
+            <!-- Cliente 2 -->
+            <div class="gallery-flip" tabindex="0">
+              <div class="gallery-flip__inner">
+                <div class="gallery-flip__front gallery__slot">
+                  <img src="./assets/gallery/perro-2.png" alt="Mascota descansando en sala canina Petlandia Sabana de Bogotá" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
+                  <div class="gallery__placeholder gallery__placeholder--visible">🐕</div>
+                </div>
+                <div class="gallery-flip__back">
+                  <p class="gallery-flip__desc">«Zonas amplias sin jaulas y supervisión 24/7. Mi perro descansa mejor aquí que en casa. ¡Guardería de confianza en la Sabana!»</p>
+                </div>
+              </div>
+            </div>
+            <!-- Cliente 3 -->
+            <div class="gallery-flip" tabindex="0">
+              <div class="gallery-flip__inner">
+                <div class="gallery-flip__front gallery__slot">
+                  <img src="./assets/gallery/perro-3.png" alt="Plan Pasadía guardería mascotas Madrid Cundinamarca" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
+                  <div class="gallery__placeholder gallery__placeholder--visible">🐕</div>
+                </div>
+                <div class="gallery-flip__back">
+                  <p class="gallery-flip__desc">«Plan Pasadía: la dosis perfecta de diversión. Quemamos energía en las zonas verdes y vuelve agotado de tanto jugar. ¡Totalmente recomendado!»</p>
+                </div>
+              </div>
+            </div>
+            <!-- Cliente 4 -->
+            <div class="gallery-flip" tabindex="0">
+              <div class="gallery-flip__inner">
+                <div class="gallery-flip__front gallery__slot">
+                  <img src="./assets/gallery/perro-4.png" alt="Grooming y spa para perros Club House Petlandia Madrid" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
+                  <div class="gallery__placeholder gallery__placeholder--visible">🐕</div>
+                </div>
+                <div class="gallery-flip__back">
+                  <p class="gallery-flip__desc">«Después del grooming y spa en Petlandia Madrid, quedó divino. Peluquería canina profesional y trato excepcional. Nos encanta.»</p>
+                </div>
+              </div>
+            </div>
+            <!-- Cliente 5 -->
+            <div class="gallery-flip" tabindex="0">
+              <div class="gallery-flip__inner">
+                <div class="gallery-flip__front gallery__slot">
+                  <img src="./assets/gallery/perro-5.png" alt="Hotel para perros guardería Madrid Cundinamarca" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
+                  <div class="gallery__placeholder gallery__placeholder--visible">🐕</div>
+                </div>
+                <div class="gallery-flip__back">
+                  <p class="gallery-flip__desc">«Huésped frecuente del hotel canino. Espacios amplios, camas cómodas y un equipo que ama a los animales. La mejor opción en Madrid, Cundinamarca.»</p>
+                </div>
+              </div>
+            </div>
+            <!-- Cliente 6 -->
+            <div class="gallery-flip" tabindex="0">
+              <div class="gallery-flip__inner">
+                <div class="gallery-flip__front gallery__slot">
+                  <img src="./assets/gallery/perro-6.png" alt="Mascota feliz guardería Petlandia Sabana de Bogotá" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
+                  <div class="gallery__placeholder gallery__placeholder--visible">🐕</div>
+                </div>
+                <div class="gallery-flip__back">
+                  <p class="gallery-flip__desc">«Club House Petlandia: donde las mascotas son familia. Guardería, hotel y spa en un solo lugar. ¡Por algo somos clientes desde el primer día!»</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Galería de gatos - temporalmente deshabilitada
+        <div class="gallery__zone">
+          <h3 class="gallery__zone-title">Gatos</h3>
+          <div class="gallery__grid gallery__grid--cats">
+            <div class="gallery-flip" tabindex="0">
+              <div class="gallery-flip__inner">
+                <div class="gallery-flip__front gallery__slot">
+                  <img src="./assets/gallery/gato-1.png" alt="Gato feliz en guardería Petlandia Madrid" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
+                  <div class="gallery__placeholder gallery__placeholder--visible">🐱</div>
+                </div>
+                <div class="gallery-flip__back">
+                  <p class="gallery-flip__desc">Minino consentido en la zona felina de Petlandia, disfrutando de las zonas de descanso y juego.</p>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-flip" tabindex="0">
+              <div class="gallery-flip__inner">
+                <div class="gallery-flip__front gallery__slot">
+                  <img src="./assets/gallery/gato-2.png" alt="Gato feliz en guardería Petlandia Madrid" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
+                  <div class="gallery__placeholder gallery__placeholder--visible">🐱</div>
+                </div>
+                <div class="gallery-flip__back">
+                  <p class="gallery-flip__desc">Explorador del Club House, con acceso seguro a estructuras de escalada y ventanas al exterior.</p>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-flip" tabindex="0">
+              <div class="gallery-flip__inner">
+                <div class="gallery-flip__front gallery__slot">
+                  <img src="./assets/gallery/gato-3.png" alt="Gato feliz en guardería Petlandia Madrid" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
+                  <div class="gallery__placeholder gallery__placeholder--visible">🐱</div>
+                </div>
+                <div class="gallery-flip__back">
+                  <p class="gallery-flip__desc">Miembro del rincón felino, socializando en un espacio tranquilo y supervisado.</p>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-flip" tabindex="0">
+              <div class="gallery-flip__inner">
+                <div class="gallery-flip__front gallery__slot">
+                  <img src="./assets/gallery/gato-4.png" alt="Gato feliz en guardería Petlandia Madrid" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
+                  <div class="gallery__placeholder gallery__placeholder--visible">🐱</div>
+                </div>
+                <div class="gallery-flip__back">
+                  <p class="gallery-flip__desc">Huésped VIP de la zona gatos, con atención personalizada y espacios de privacidad.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <section id="resenas" class="reviews">
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <p class="reviews__intro">Reseñas reales de Google Maps. ¡Gracias por confiar en nosotros!</p>
+      <div class="reviews__grid" id="reviews-container">
+        <!-- Reseñas: copia desde Google Maps o deja vacío para cargar con API (ver js/main.js) -->
+        <article class="review-card">
+          <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+          <p class="review-card__text">"Excelente lugar para mi perro. El personal es muy amable y las instalaciones están muy cuidadas. Mi mascota siempre vuelve contenta."</p>
+          <p class="review-card__author">— Cliente en Google</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+          <p class="review-card__text">"Recomendado 100%. Espacios amplios, supervisión constante y mi perra disfruta cada visita. El Plan Pasadía es genial."</p>
+          <p class="review-card__author">— Cliente en Google</p>
+        </article>
+        <article class="review-card">
+          <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+          <p class="review-card__text">"La mejor guardería de la zona. Tranquilidad total dejando a mi mascota. El grooming que le hicieron quedó perfecto."</p>
+          <p class="review-card__author">— Cliente en Google</p>
+        </article>
+      </div>
+      <a href="https://maps.app.goo.gl/ShNb5h9mGfTZvmDX7" target="_blank" rel="noopener noreferrer" class="reviews__cta btn">
+        Ver todas las reseñas en Google Maps
+      </a>
+    </section>
+
+    <section id="contacto" class="lead-form">
+      <h2 class="section-title">Reserva tu visita</h2>
+      <form id="lead-form" class="form" novalidate>
+        <div class="form__group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" autocomplete="name" minlength="2">
+          <span class="form__error" id="error-nombre" role="alert"></span>
+        </div>
+        <div class="form__group">
+          <label for="mascota">Nombre de tu mascota</label>
+          <input type="text" id="mascota" name="mascota" placeholder="Nombre de tu mascota">
+        </div>
+        <div class="form__group">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 300 123 4567" autocomplete="tel">
+          <span class="form__error" id="error-telefono" role="alert"></span>
+        </div>
+        <div class="form__group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="3" placeholder="Cuéntanos sobre tu mascota..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--whatsapp">Enviar y agendar por WhatsApp</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <h3 class="footer__title">Club House Petlandia</h3>
+        <p class="footer__location">
+          <a href="https://maps.app.goo.gl/ShNb5h9mGfTZvmDX7" target="_blank" rel="noopener noreferrer">Club House Petlandia, Madrid, Cundinamarca</a>
+        </p>
+        <p class="footer__hours">Horarios de atención: Lun - Dom 8:00 - 18:00</p>
+      </div>
+      <div class="footer__map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.9!2d-74.2669698!3d4.7356368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f79c64b82fb95%3A0x988de972e5305d10!2sClub+House+Petlandia!5e0!3m2!1ses!2sco!4v1710700000000" width="100%" height="200" style="border:0;border-radius:20px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Club House Petlandia - Ubicación oficial"></iframe>
+      </div>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/petlandia_clubhouse" target="_blank" rel="noopener noreferrer" class="footer__social-link footer__social-link--instagram" aria-label="Síguenos en Instagram">
+          <img src="./assets/icons/instagram.svg" alt="" width="20" height="20">
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/p/Petlandia-Club-House-61572618735484/" target="_blank" rel="noopener noreferrer" class="footer__social-link footer__social-link--facebook" aria-label="Síguenos en Facebook">
+          <img src="./assets/icons/facebook.svg" alt="" width="20" height="20">
+          <span>Facebook</span>
+        </a>
+        <a href="#" id="footer-whatsapp" class="footer__social-link footer__social-link--whatsapp" aria-label="Contactar por WhatsApp">
+          <img src="./assets/icons/whatsapp.svg" alt="" width="20" height="20">
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="./js/main.js"></script>
+</body>
+</html>
