@@ -1,0 +1,28 @@
+name: Deploy Landing to OCI
+on:
+  push:
+    branches:
+      - master  # Se dispara cada vez que subes a la rama principal
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Configure OCI CLI
+        uses: oracle-actions/configure-oci-cli@v1.0.0
+        with:
+          user: ${{ secrets.OCI_USER_OCID }}
+          tenancy: ${{ secrets.OCI_TENANCY_OCID }}
+          fingerprint: ${{ secrets.OCI_FINGERPRINT }}
+          region: ${{ secrets.OCI_REGION }}
+          api_key: ${{ secrets.OCI_KEY_FILE }}
+
+      - name: Sync Files to Object Storage
+        run: |
+          # Sincroniza la carpeta local (ej. './') con el bucket
+          # --empty-prefix sube todo a la raíz del bucket
+          # --delete-after borra en el bucket lo que ya no existe localmente
+          oci os object bulk-upload -bn landing-page-negocio --src-dir ./ --overwrite --empty-prefix
