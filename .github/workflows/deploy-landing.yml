@@ -35,5 +35,4 @@ jobs:
           ~/bin/oci os object bulk-upload \
             -bn landing-page-negocio \
             --src-dir ./ \
-            --overwrite \
-            --empty-prefix
+            --overwrite 
