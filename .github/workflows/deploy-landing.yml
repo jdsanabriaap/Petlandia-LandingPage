@@ -13,29 +13,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install OCI CLI
-        run: |
-          bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)" \
-            -- --accept-all-defaults
-          echo "/home/runner/bin" >> $GITHUB_PATH
-
-      - name: Configure OCI CLI
-        run: |
-          mkdir -p ~/.oci
-          echo "[DEFAULT]"                                > ~/.oci/config
-          echo "user=${{ secrets.OCI_USER_OCID }}"      >> ~/.oci/config
-          echo "fingerprint=${{ secrets.OCI_FINGERPRINT }}" >> ~/.oci/config
-          echo "tenancy=${{ secrets.OCI_TENANCY_OCID }}" >> ~/.oci/config
-          echo "region=${{ secrets.OCI_REGION }}"        >> ~/.oci/config
-          echo "key_file=~/.oci/oci_api_key.pem"        >> ~/.oci/config
-          echo "${{ secrets.OCI_KEY_FILE }}"             > ~/.oci/oci_api_key.pem
-          chmod 600 ~/.oci/oci_api_key.pem
-
-      - name: Sync Files to Object Storage
-        run: |
-          ~/bin/oci os object bulk-upload \
-            -bn petlandia-clubhouse \
-            --src-dir ./ \
-            --exclude ".git/*" \
-            --exclude "README.md" \
+      - name: Deploy to OCI Object Storage
+        uses: oracle-actions/run-oci-cli-command@v1.3.2
+        env:
+          OCI_CLI_USER:        ${{ secrets.OCI_USER_OCID }}
+          OCI_CLI_FINGERPRINT: ${{ secrets.OCI_FINGERPRINT }}
+          OCI_CLI_TENANCY:     ${{ secrets.OCI_TENANCY_OCID }}
+          OCI_CLI_REGION:      ${{ secrets.OCI_REGION }}
+          OCI_CLI_KEY_CONTENT: ${{ secrets.OCI_KEY_FILE }}
+        with:
+          command: >
+            os object bulk-upload
+            -bn petlandia-clubhouse
+            --src-dir ./
+            --exclude ".git/*"
+            --exclude "README.md"
             --overwrite
