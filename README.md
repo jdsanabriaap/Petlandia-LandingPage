@@ -57,7 +57,7 @@ landpagePetlandia/
 | Sección      | Descripción                                           |
 |-------------|--------------------------------------------------------|
 | **Hero**    | Portada con imagen y CTA de WhatsApp                  |
-| **Servicios** | Tarjetas flip: Guardería Canina/Felina, Plan Pasadía (con video), Grooming, Pet Shop, Cumpleaños |
+| **Servicios** | Tarjetas flip: Guardería Canina/Felina, Plan Pasadía (con video), Grooming, Pet Shop, Paseos |
 | **Por qué elegirnos** | Filosofía + espacios con imágenes             |
 | **Clientes felices** | Galería de mascotas con descripciones manuales   |
 | **Reseñas** | Opiniones (manual o API de Google)                    |

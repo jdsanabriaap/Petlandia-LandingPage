@@ -286,6 +286,10 @@
     min-height: 140px;
   }
 
+  .card__back-img {
+    max-height: 140px;
+  }
+
   .card__placeholder {
     height: 180px;
   }
@@ -825,6 +829,14 @@ body {
   color: var(--dark-text);
   opacity: 0.6;
   margin-top: 0.5rem;
+}
+
+.card__back-img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 1rem;
 }
 
 .card__back-text {
