@@ -1,3 +1,29 @@
-name: Deploy Landing to OCIon:  push:    branches:      - master jobs:  deploy:    runs-on: ubuntu-latest    steps:      - name: Checkout code        uses: actions/checkout@v4       - name: Install OCI CLI        run: |          bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)" -- --accept-all-defaults          echo "/home/runner/bin" >> $GITHUB_PATH      - name: Configure OCI CLI        run: |          mkdir -p ~/.oci          echo "[DEFAULT]" > ~/.oci/config          echo "user=${{ secrets.OCI_USER_OCID }}" >> ~/.oci/config          echo "fingerprint=${{ secrets.OCI_FINGERPRINT }}" >> ~/.oci/config          echo "tenancy=${{ secrets.OCI_TENANCY_OCID }}" >> ~/.oci/config          echo "region=${{ secrets.OCI_REGION }}" >> ~/.oci/config          echo "key_file=~/.oci/oci_api_key.pem" >> ~/.oci/config                    echo "${{ secrets.OCI_KEY_FILE }}" > ~/.oci/oci_api_key.pem          chmod 600 ~/.oci/oci_api_key.pem      - name: Sync Files to Object Storage        run: |          # Usamos el CLI instalado directamente          ~/bin/oci os object bulk-upload \            -bn petlandia-clubhouse \            --src-dir ./ \            --overwrite
+name: Deploy Landing to OCI
 
-este workflow funciona pero como puedo evitar la descarga de toda la OCI CL
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Sync to OCI Object Storage
+        env:
+          RCLONE_CONFIG_OCI_TYPE: s3
+          RCLONE_CONFIG_OCI_PROVIDER: Other
+          RCLONE_CONFIG_OCI_ACCESS_KEY_ID: ${{ secrets.OCI_S3_ACCESS_KEY }}
+          RCLONE_CONFIG_OCI_SECRET_ACCESS_KEY: ${{ secrets.OCI_S3_SECRET_KEY }}
+          RCLONE_CONFIG_OCI_ENDPOINT: ${{ secrets.OCI_S3_ENDPOINT }}
+          RCLONE_CONFIG_OCI_REGION: ${{ secrets.OCI_REGION }}
+        run: |
+          rclone sync ./ oci:petlandia-clubhouse \
+            --exclude ".git/**" \
+            --exclude "README.md" \
+            --transfers=10 \
+            --progress
