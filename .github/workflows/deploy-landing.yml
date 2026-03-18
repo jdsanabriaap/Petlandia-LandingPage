@@ -1,4 +1,4 @@
-- name: Sync to OCI Object Storage (rclone)
+- name: Sync to OCI Object Storage
   env:
     RCLONE_CONFIG_OCI_TYPE: s3
     RCLONE_CONFIG_OCI_PROVIDER: Other
@@ -7,7 +7,7 @@
     RCLONE_CONFIG_OCI_ENDPOINT: ${{ secrets.OCI_S3_ENDPOINT }}
     RCLONE_CONFIG_OCI_REGION: ${{ secrets.OCI_REGION }}
   run: |
-    rclone sync ./ OCI:petlandia-clubhouse \
+    rclone sync ./ oci:petlandia-clubhouse \
       --exclude ".git/**" \
       --transfers=10 \
       --progress
