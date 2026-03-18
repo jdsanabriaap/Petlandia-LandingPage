@@ -13,6 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install rclone
+        run: curl https://rclone.org/install.sh | sudo bash
+
       - name: Sync to OCI Object Storage
         env:
           RCLONE_CONFIG_OCI_TYPE: s3
