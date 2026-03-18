@@ -11,3 +11,4 @@
       --exclude ".git/**" \
       --transfers=10 \
       --progress
+      --verbose
