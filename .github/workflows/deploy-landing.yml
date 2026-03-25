@@ -30,28 +30,13 @@ jobs:
             --exclude "README.md"
             --content-type auto
             --overwrite
-
-      # Requiere en GitHub → Settings → Secrets:
-      # CLOUDFLARE_ZONE_ID  → Zone ID del dominio en Cloudflare
-      # CLOUDFLARE_API_TOKEN → API Token con permiso "Cache Purge" (o Zone:Cache Purge)
       - name: Purge Cloudflare cache
         env:
           CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          set -e
-          if [ -z "$CLOUDFLARE_ZONE_ID" ] || [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "::error::Faltan secrets CLOUDFLARE_ZONE_ID o CLOUDFLARE_API_TOKEN"
-            exit 1
-          fi
-          HTTP_CODE=$(curl -sS -o cf-purge.json -w "%{http_code}" -X POST \
-            "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
-            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-            -H "Content-Type: application/json" \
-            --data '{"purge_everything":true}')
-          cat cf-purge.json
-          if [ "$HTTP_CODE" != "200" ]; then
-            echo "::error::Cloudflare purge falló (HTTP $HTTP_CODE)"
-            exit 1
-          fi
-          grep -q '"success":true' cf-purge.json || { echo "::error::Respuesta Cloudflare sin success"; exit 1; }
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ env.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+              -H "Authorization: Bearer ${{ env.CLOUDFLARE_API_TOKEN }}" \
+              -H "Content-Type: application/json" \
+              --data '{"purge_everything":true}' \
+              --fail

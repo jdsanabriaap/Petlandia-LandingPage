@@ -4,54 +4,6 @@ Landing page estática para **Club House Petlandia**, guardería, hotel y spa pa
 
 ---
 
-## Cómo ejecutar
-
-Usa un servidor local para evitar errores con `file://` y el iframe de Google Maps:
-
-```bash
-npx serve
-```
-
-o
-
-```bash
-python -m http.server 8080
-```
-
-Luego abre `http://localhost:3000` (o `http://localhost:8080`).
-
----
-
-## Estructura del proyecto
-
-```
-landpagePetlandia/
-├── index.html          # Página principal
-├── css/
-│   └── style.css       # Estilos
-├── js/
-│   └── main.js         # Menú móvil, formulario, WhatsApp, flip cards
-├── assets/
-│   ├── icons/          # Iconos SVG
-│   │   ├── whatsapp.svg
-│   │   ├── instagram.svg
-│   │   ├── facebook.svg
-│   │   └── paw.svg
-│   └── gallery/        # Imágenes y medios
-│       ├── Logo.png
-│       ├── Hero.png
-│       ├── ClubHouse.png
-│       ├── PatioPrincipal.jpeg
-│       ├── PetShop.jpg
-│       ├── Sala Canina 1.jpeg
-│       ├── Sala Canina 2.jpeg
-│       ├── Spa.webp
-│       ├── Pasadia.mp4
-│       └── perro-1.png ... perro-6.png
-```
-
----
-
 ## Secciones de la página
 
 | Sección      | Descripción                                           |
