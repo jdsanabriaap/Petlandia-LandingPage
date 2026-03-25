@@ -3,10 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Club House Petlandia | Hotel, Guardería y Spa en Madrid, Cundinamarca</title>
-  <meta name="description" content="El mejor cuidado para tu mascota en la Sabana. Hotel canino y felino, Guardería, Spa profesional. ¡Reserva ahora!">
-  <meta name="keywords" content="Hotel canino Madrid Cundinamarca, guardería para perros, guardería felina, spa de mascotas, groomer mascotas Sabana, peluquería canina Madrid">
+  <title>Hotel y Guardería de Mascotas en Madrid, Cund. | Petlandia</title>
+  <meta name="description" content="Hotel y guardería para perros y gatos en Madrid, Cundinamarca. Spa, plan pasadía y pet shop. Club House Petlandia — reserva hoy.">
+  <meta name="keywords" content="Hotel canino Madrid Cundinamarca, guardería para perros, guardería felina, spa de mascotas, groomer Petlandia">
+  <link rel="canonical" href="https://petlandiaclubhouse.com/">
   <link rel="icon" type="image/png" href="./assets/gallery/Logo.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PetBoarding",
+    "name": "Club House Petlandia",
+    "description": "Hotel, guardería canina y felina, spa y pet shop en Madrid, Cundinamarca",
+    "url": "https://petlandiaclubhouse.com/",
+    "telephone": "+573028574019",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Lorena Echavarria, Cra. 11 #7- 85",
+      "addressLocality": "Madrid",
+      "addressRegion": "Cundinamarca",
+      "addressCountry": "CO"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 4.7356368,
+      "longitude": -74.2669698
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Madrid, Cundinamarca" }
+    ],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }],
+    "sameAs": [
+      "https://www.instagram.com/petlandia_clubhouse",
+      "https://www.facebook.com/p/Petlandia-Club-House-61572618735484/"
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Roboto+Rounded:wght@300;400;500&display=swap" rel="stylesheet">
@@ -32,42 +68,63 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <a href="#hero" class="visually-hidden">Saltar al contenido principal</a>
+  <a href="#inicio" class="visually-hidden">Saltar al contenido principal</a>
 
   <header class="header">
     <div class="header__inner">
-      <a href="#" class="header__logo" aria-label="Club House Petlandia - Inicio">
-        <img src="./assets/gallery/Logo.png" alt="Club House Petlandia" width="280" height="100" loading="eager">
+      <a href="./" class="header__logo" aria-label="Club House Petlandia - Inicio">
+        <img src="./assets/gallery/Logo.png" alt="Club House Petlandia — hotel y guardería Madrid Cundinamarca" width="280" height="100" loading="eager" decoding="async">
       </a>
-      <nav class="nav" aria-label="Navegación principal">
+      <nav id="site-nav" class="nav" aria-label="Navegación principal">
         <ul class="nav__list">
-          <li><a href="#hero" class="nav__link">Inicio</a></li>
+          <li><a href="#inicio" class="nav__link">Inicio</a></li>
           <li><a href="#servicios" class="nav__link">Servicios</a></li>
-          <li><a href="#por-que" class="nav__link">Nosotros</a></li>
+          <li class="nav__item nav__item--dropdown">
+            <details class="nav__details">
+              <summary class="nav__summary">Huéspedes</summary>
+              <ul class="nav__sublist" role="list">
+                <li>
+                  <a href="./hotel-canino-madrid/" class="nav__link nav__sublink">Hotel canino</a>
+                </li>
+                <li>
+                  <a href="./guarderia-gatos-madrid/" class="nav__link nav__sublink">Guardería felina</a>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="#nosotros" class="nav__link">Nosotros</a></li>
           <li><a href="#galeria" class="nav__link">Clientes</a></li>
           <li><a href="#resenas" class="nav__link">Reseñas</a></li>
-          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+          <li><a href="#como-llegar" class="nav__link">Cómo llegar</a></li>
+          <li><a href="#contacto" class="nav__link nav__link--accent">Contacto</a></li>
         </ul>
       </nav>
-      <button class="header__menu-btn" aria-label="Abrir menú" aria-expanded="false">
-        <span class="header__menu-bar"></span>
-        <span class="header__menu-bar"></span>
-        <span class="header__menu-bar"></span>
+      <button type="button" class="header__menu-btn" aria-label="Abrir menú" aria-controls="site-nav" aria-expanded="false">
+        <span class="header__menu-bar" aria-hidden="true"></span>
+        <span class="header__menu-bar" aria-hidden="true"></span>
+        <span class="header__menu-bar" aria-hidden="true"></span>
       </button>
     </div>
   </header>
 
   <main>
-    <section id="hero" class="hero">
+    <section id="inicio" class="hero">
       <div class="hero__bg">
-        <img src="./assets/gallery/Hero.png" alt="Patio de Club House Petlandia con perros jugando" width="1920" height="1080" fetchpriority="high">
+        <picture>
+          <source srcset="./assets/gallery/Hero.webp" type="image/webp">
+          <img src="./assets/gallery/Hero.png" alt="Patio de guardería canina en Madrid, Cundinamarca — Club House Petlandia" width="1920" height="1080" fetchpriority="high" decoding="async">
+        </picture>
       </div>
       <div class="hero__overlay"></div>
       <div class="hero__content">
         <h1 class="hero__title">
-          <img src="./assets/gallery/ClubHouse.png" alt="Club House Petlandia: El paraíso diseñado para el bienestar de tu mascota" width="800" height="240" loading="eager">
+          <picture>
+            <source srcset="./assets/gallery/ClubHouse.webp" type="image/webp">
+            <img src="./assets/gallery/ClubHouse.png" alt="Club House Petlandia" width="800" height="240" loading="eager" decoding="async" aria-hidden="true">
+          </picture>
+          <span class="hero__heading-text">Club Canino y Felino en Madrid, Cundinamarca</span>          
         </h1>
-        <p class="hero__subtitle">Guardería, Hotel y Spa en Madrid, Cundinamarca. Un espacio integral donde la diversión y el cuidado profesional se encuentran.</p>
+        <p class="hero__subtitle">Guardería, hotel y spa en <strong>Madrid, Cundinamarca</strong>. Un espacio integral donde la diversión y el cuidado profesional se encuentran — atendemos a perros y gatos.</p>
         <div class="hero__cta">
           <a href="#" id="cta-whatsapp" class="btn btn--whatsapp">Agendar por WhatsApp</a>
           <a href="#servicios" class="btn btn--secondary">Ver nuestros servicios</a>
@@ -89,7 +146,10 @@
               <div class="card__icon card__icon--dog">🏠</div>
               <h3 class="card__title">Guardería Canina</h3>
               <p class="card__text">Socialización segura y juego supervisado para que tu perro nunca se sienta solo.</p>
-              <img src="./assets/gallery/PatioPrincipal.jpeg" alt="Sala de guardería canina" class="card__img" loading="lazy" width="400" height="300">
+              <picture>
+                <source srcset="./assets/gallery/PatioPrincipal.webp" type="image/webp">
+                <img src="./assets/gallery/PatioPrincipal.jpeg" alt="Sala de guardería canina en Madrid Cundinamarca — Petlandia" class="card__img" loading="lazy" width="400" height="300" decoding="async">
+              </picture>
               <p class="card__hint">Haz clic para más información</p>
             </div>
             <div class="card-flip__back card">
@@ -104,7 +164,10 @@
               <div class="card__icon card__icon--cat">🐱</div>
               <h3 class="card__title">Guardería Felina</h3>
               <p class="card__text">Espacio dedicado y tranquilo para gatos, con zonas de descanso y juego.</p>
-              <img src="./assets/gallery/CuartoFelino.png" alt="Sala de guardería Felina" class="card__img" loading="lazy" width="400" height="300">
+              <picture>
+                <source srcset="./assets/gallery/CuartoFelino.webp" type="image/webp">
+                <img src="./assets/gallery/CuartoFelino.png" alt="Gato en guardería separada en Madrid Cundinamarca" class="card__img" loading="lazy" width="400" height="300" decoding="async">
+              </picture>
               <p class="card__hint">Haz clic para más información</p>
             </div>
             <div class="card-flip__back card">
@@ -134,11 +197,17 @@
               <div class="card__icon card__icon--spa">🛁</div>
               <h3 class="card__title">Grooming y SPA</h3>
               <p class="card__text">Peluquería profesional, baños relajantes y mimos con productos premium.</p>
-              <img src="./assets/gallery/Spa 1.jpeg" alt="Área de grooming: bañera y mesa de peluquería" class="card__img" loading="lazy" width="400" height="300">
+              <picture>
+                <source srcset="./assets/gallery/Spa-1.webp" type="image/webp">
+                <img src="./assets/gallery/Spa 1.jpeg" alt="Spa y grooming para mascotas en Madrid Cundinamarca — Petlandia" class="card__img" loading="lazy" width="400" height="300" decoding="async">
+              </picture>
               <p class="card__hint">Haz clic para más información</p>
             </div>
             <div class="card-flip__back card">
-              <img src="./assets/gallery/Banera.jpeg" alt="Zona de baño para mascotas" class="card__back-img" loading="lazy" width="400" height="260">
+              <picture>
+                <source srcset="./assets/gallery/Banera.webp" type="image/webp">
+                <img src="./assets/gallery/Banera.jpeg" alt="Baño y peluquería canina en Madrid Cundinamarca" class="card__back-img" loading="lazy" width="400" height="260" decoding="async">
+              </picture>
               <p class="card__back-text">Baños, corte de uñas, limpieza de oídos, cepillado y perfume. Peluquería canina con productos de alta calidad. También ofrecemos combos con guardería.</p>
               <a href="#" class="btn btn--whatsapp btn-agendar" data-servicio="Grooming y SPA">Agendar</a>
             </div>
@@ -150,7 +219,10 @@
               <div class="card__icon card__icon--shop">🛒</div>
               <h3 class="card__title">Pet Shop</h3>
               <p class="card__text">Accesorios exclusivos y snacks saludables seleccionados para los más consentidos.</p>
-              <img src="./assets/gallery/PetShop.jpg" alt="Área de pet shop" class="card__img" loading="lazy" width="400" height="300">
+              <picture>
+                <source srcset="./assets/gallery/PetShop.webp" type="image/webp">
+                <img src="./assets/gallery/PetShop.jpg" alt="Pet shop y accesorios para mascotas en Madrid Cundinamarca" class="card__img" loading="lazy" width="400" height="300" decoding="async">
+              </picture>
               <p class="card__hint">Haz clic para más información</p>
             </div>
             <div class="card-flip__back card">
@@ -165,7 +237,10 @@
               <div class="card__icon card__icon--party">🐕</div>
               <h3 class="card__title">Paseos</h3>
               <p class="card__text">Paseos recreativos y de ejercicio. Exploración, socialización y diversión al aire libre.</p>
-              <img src="./assets/gallery/Paseos.jpeg" alt="Paseos recreativos y de ejercicio" class="card__img" loading="lazy" width="400" height="300">
+              <picture>
+                <source srcset="./assets/gallery/Paseos.webp" type="image/webp">
+                <img src="./assets/gallery/Paseos.jpeg" alt="Paseos supervisados en Madrid Cundinamarca — Petlandia" class="card__img" loading="lazy" width="400" height="300" decoding="async">
+              </picture>
               <p class="card__hint">Haz clic para más información</p>
             </div>
             <div class="card-flip__back card">
@@ -177,7 +252,7 @@
       </div>
     </section>
 
-    <section class="why-us" id="por-que">
+    <section class="why-us" id="nosotros">
       <h2 class="section-title">Por qué elegirnos</h2>
       <div class="why-us__intro">
         <p class="why-us__philosophy">En Club House Petlandia creemos que cada mascota merece un lugar donde sentirse segura, querida y parte de una familia. No somos solo un servicio de guardería o grooming: somos el segundo hogar de tu mejor amigo. Nuestra filosofía se basa en el bienestar integral, la socialización positiva y el cuidado profesional con corazón. Cada día trabajamos para que tu mascota disfrute al máximo mientras tú disfrutas la tranquilidad de saber que está en las mejores manos.</p>
@@ -220,32 +295,47 @@
         <div class="spaces__images">
           <figure class="spaces__card">
             <div class="spaces__card-inner">
-              <img src="./assets/gallery/PatioPrincipal.jpeg" alt="Patio exterior de Club House Petlandia" loading="lazy">
+              <picture>
+                <source srcset="./assets/gallery/PatioPrincipal.webp" type="image/webp">
+                <img src="./assets/gallery/PatioPrincipal.jpeg" alt="Patio exterior guardería Madrid Cundinamarca Club House Petlandia" loading="lazy" decoding="async">
+              </picture>
             </div>
           </figure>
           <figure class="spaces__card">
             <div class="spaces__card-inner">
-              <img src="./assets/gallery/PetShop.jpg" alt="Área de pet shop" loading="lazy">
+              <picture>
+                <source srcset="./assets/gallery/PetShop.webp" type="image/webp">
+                <img src="./assets/gallery/PetShop.jpg" alt="Pet shop en instalaciones Petlandia Madrid Cundinamarca" loading="lazy" decoding="async">
+              </picture>
             </div>
           </figure>
           <figure class="spaces__card">
             <div class="spaces__card-inner">
-              <img src="./assets/gallery/Spa.webp" alt="Área de grooming: bañera y mesa de peluquería" loading="lazy">
+              <img src="./assets/gallery/Spa.webp" alt="Área de spa y grooming en Madrid Cundinamarca" loading="lazy" decoding="async">
             </div>
           </figure>
           <figure class="spaces__card">
             <div class="spaces__card-inner">
-              <img src="./assets/gallery/Sala%20Canina%202.jpeg" alt="Área de descanso canina con camas elevadas con conexion con el patio interior" loading="lazy">
+              <picture>
+                <source srcset="./assets/gallery/Sala-Canina-2.webp" type="image/webp">
+                <img src="./assets/gallery/Sala%20Canina%202.jpeg" alt="Sala canina con camas elevadas conectada al patio interior — hotel canino Madrid" loading="lazy" decoding="async">
+              </picture>
             </div>
           </figure>
           <figure class="spaces__card">
             <div class="spaces__card-inner">
-              <img src="./assets/gallery/Sala%20Canina%201.jpeg" alt="Área de descanso canina coneccion con el patio interior" loading="lazy">
+              <picture>
+                <source srcset="./assets/gallery/Sala-Canina-1.webp" type="image/webp">
+                <img src="./assets/gallery/Sala%20Canina%201.jpeg" alt="Sala de descanso canina con salida al patio — guardería Petlandia" loading="lazy" decoding="async">
+              </picture>
             </div>
           </figure>
           <figure class="spaces__card">
             <div class="spaces__card-inner">
-              <img src="./assets/gallery/CuartoFelino.png" alt="Zona de gatos con acceso seguro a través de la Sala 2 por un espacio de doble puerta" loading="lazy">
+              <picture>
+                <source srcset="./assets/gallery/CuartoFelino.webp" type="image/webp">
+                <img src="./assets/gallery/CuartoFelino.png" alt="Zona felina separada con doble puerta — guardería de gatos Madrid Cundinamarca" loading="lazy" decoding="async">
+              </picture>
             </div>
           </figure>
         </div>
@@ -254,7 +344,7 @@
 
     <section id="galeria" class="gallery">
       <h2 class="section-title">Nuestros Clientes Felices</h2>
-      <p class="gallery__intro">Fotos y momentos compartidos por familias de la Sabana. <em>¿Quieres aparecer aquí?</em> Etiquétanos en Instagram <a href="https://www.instagram.com/petlandia_clubhouse" target="_blank" rel="noopener noreferrer">@petlandia_clubhouse</a></p>
+      <p class="gallery__intro">Fotos y momentos compartidos por familias en <strong>Madrid, Cundinamarca</strong>. <em>¿Quieres aparecer aquí?</em> Etiquétanos en Instagram <a href="https://www.instagram.com/petlandia_clubhouse" target="_blank" rel="noopener noreferrer">@petlandia_clubhouse</a></p>
       <div class="gallery__zones">
         <div class="gallery__zone">
           <h3 class="gallery__zone-title">Perros</h3>
@@ -263,7 +353,7 @@
             <div class="gallery-flip" tabindex="0">
               <div class="gallery-flip__inner">
                 <div class="gallery-flip__front gallery__slot">
-                  <img src="./assets/gallery/perro-1.png" alt="Perro jugando en guardería canina Club House Petlandia Madrid Cundinamarca" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
+                  <img src="./assets/gallery/perro-1.png" alt="Perro jugando en guardería canina Club House Petlandia Madrid Cundinamarca" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
                   <div class="gallery__placeholder gallery__placeholder--visible">🐕</div>
                 </div>
                 <div class="gallery-flip__back">
@@ -275,11 +365,11 @@
             <div class="gallery-flip" tabindex="0">
               <div class="gallery-flip__inner">
                 <div class="gallery-flip__front gallery__slot">
-                  <img src="./assets/gallery/perro-2.png" alt="Mascota descansando en sala canina Petlandia Sabana de Bogotá" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
+                  <img src="./assets/gallery/perro-2.png" alt="Mascota descansando en sala canina Petlandia Madrid Cundinamarca" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
                   <div class="gallery__placeholder gallery__placeholder--visible">🐕</div>
                 </div>
                 <div class="gallery-flip__back">
-                  <p class="gallery-flip__desc">«Zonas amplias sin jaulas y supervisión 24/7. Mi perro descansa mejor aquí que en casa. ¡Guardería de confianza en la Sabana!»</p>
+                  <p class="gallery-flip__desc">«Zonas amplias sin jaulas y supervisión 24/7. Mi perro descansa mejor aquí que en casa. ¡Guardería de confianza en Madrid, Cundinamarca!»</p>
                 </div>
               </div>
             </div>
@@ -323,7 +413,7 @@
             <div class="gallery-flip" tabindex="0">
               <div class="gallery-flip__inner">
                 <div class="gallery-flip__front gallery__slot">
-                  <img src="./assets/gallery/perro-6.png" alt="Mascota feliz guardería Petlandia Sabana de Bogotá" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
+                  <img src="./assets/gallery/perro-6.png" alt="Mascota feliz en guardería Petlandia Madrid Cundinamarca" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.classList.add('gallery__placeholder--visible')" onload="this.nextElementSibling.classList.remove('gallery__placeholder--visible')">
                   <div class="gallery__placeholder gallery__placeholder--visible">🐕</div>
                 </div>
                 <div class="gallery-flip__back">
@@ -413,6 +503,20 @@
       </a>
     </section>
 
+    <section id="como-llegar" class="how-to-arrive" aria-labelledby="como-llegar-title">
+      <h2 id="como-llegar-title" class="section-title">Cómo llegar</h2>
+      <div class="how-to-arrive__inner">
+        <p class="how-to-arrive__text">Estamos en <strong>Madrid, Cundinamarca</strong>. Sabemos que el trayecto importa: nuestras instalaciones campestres son el destino del viaje — amplias zonas para perros, espacios separados para gatos y socialización supervisada.</p>
+        <p class="how-to-arrive__text"><strong>Dirección:</strong> Lorena Echavarria, Cra. 11 #7- 85, Madrid, Cundinamarca. Te recomendamos abrir la ruta en Google Maps antes de salir. Si no aparece una entrada clara en la vía pública, llámanos por WhatsApp y te orientamos en tiempo real.</p>
+        <p class="how-to-arrive__cta">
+          <a href="https://maps.app.goo.gl/ShNb5h9mGfTZvmDX7" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Abrir ruta en Google Maps</a>
+        </p>
+        <div class="how-to-arrive__map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.9!2d-74.2669698!3d4.7356368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f79c64b82fb95%3A0x988de972e5305d10!2sClub+House+Petlandia!5e0!3m2!1ses!2sco!4v1710700000000" width="100%" height="280" style="border:0;border-radius:20px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa: Club House Petlandia, Madrid Cundinamarca"></iframe>
+        </div>
+      </div>
+    </section>
+
     <section id="contacto" class="lead-form">
       <h2 class="section-title">Reserva tu visita</h2>
       <form id="lead-form" class="form" novalidate>
@@ -444,12 +548,10 @@
       <div class="footer__brand">
         <h3 class="footer__title">Club House Petlandia</h3>
         <p class="footer__location">
-          <a href="https://maps.app.goo.gl/ShNb5h9mGfTZvmDX7" target="_blank" rel="noopener noreferrer">Club House Petlandia, Madrid, Cundinamarca</a>
+          <a href="https://maps.app.goo.gl/ShNb5h9mGfTZvmDX7" target="_blank" rel="noopener noreferrer">Club House Petlandia, Lorena Echavarria, Cra. 11 #7- 85, Madrid, Cundinamarca.</a>
         </p>
         <p class="footer__hours">Horarios de atención: Lun - Dom 8:00 - 18:00</p>
-      </div>
-      <div class="footer__map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.9!2d-74.2669698!3d4.7356368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f79c64b82fb95%3A0x988de972e5305d10!2sClub+House+Petlandia!5e0!3m2!1ses!2sco!4v1710700000000" width="100%" height="200" style="border:0;border-radius:20px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Club House Petlandia - Ubicación oficial"></iframe>
+        <p class="footer__map-link"><a href="#como-llegar">Cómo llegar e indicaciones en mapa</a></p>
       </div>
       <div class="footer__social">
         <a href="https://www.instagram.com/petlandia_clubhouse" target="_blank" rel="noopener noreferrer" class="footer__social-link footer__social-link--instagram" aria-label="Síguenos en Instagram">
