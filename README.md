@@ -159,7 +159,30 @@ external_integrations:
   - google_maps_iframe  # index.html
 ```
 
-**Secrets de GitHub Actions (despliegue):** OCI (`OCI_USER_OCID`, `OCI_FINGERPRINT`, `OCI_TENANCY_OCID`, `OCI_REGION`, `OCI_KEY_FILE`). **Post-despliegue:** Cloudflare `CLOUDFLARE_ZONE_ID`, `CLOUDFLARE_API_TOKEN` (permiso *Cache Purge* en la zona).
+**Secrets de GitHub Actions (despliegue):** OCI (`OCI_USER_OCID`, `OCI_FINGERPRINT`, `OCI_TENANCY_OCID`, `OCI_REGION`, `OCI_KEY_FILE`).
+
+**Post-despliegue (Cloudflare), elige una opción:**
+
+| Secret | Uso |
+|--------|-----|
+| `CLOUDFLARE_ZONE_ID` | Obligatorio. *Overview* de la zona en el dashboard de Cloudflare. |
+| `CLOUDFLARE_API_TOKEN` | **Recomendado.** API Token con permiso **Zone → Cache Purge → Purge** y recurso de zona **Specific zone** = el dominio de la landing. Crear en [dash.cloudflare.com](https://dash.cloudflare.com/) → perfil → **API Tokens** → *Create Token* (plantilla personalizada). |
+| `CLOUDFLARE_API_EMAIL` + `CLOUDFLARE_GLOBAL_API_KEY` | Alternativa legacy: email de la cuenta y **Global API Key** (My Profile → API Keys). El workflow usa `X-Auth-Email` / `X-Auth-Key`; **no** pongas la Global Key en `CLOUDFLARE_API_TOKEN` con `Bearer` (eso provoca **401 Authentication error**). |
+
+### Si el purge falla con HTTP 401 / `Authentication error`
+
+1. **No uses la Global API Key como Bearer.** Debe ser un **API Token** en `Authorization: Bearer`, o bien los dos secrets de email + Global Key como en la tabla.
+2. Comprueba que el token tenga **Purge** sobre la **misma** zona que `CLOUDFLARE_ZONE_ID`.
+3. Al pegar el token en GitHub → *Secrets*, evita espacios o saltos de línea extra (el workflow recorta bordes, pero no caracteres raros en medio).
+
+Comprobar el token en tu máquina (debe responder `"success": true`):
+
+```bash
+curl -sS "https://api.cloudflare.com/client/v4/user/tokens/verify" \
+  -H "Authorization: Bearer TU_API_TOKEN"
+```
+
+El workflow hace esta misma comprobación **solo** si usas `CLOUDFLARE_API_TOKEN` (no con email + Global API Key).
 
 ---
 
