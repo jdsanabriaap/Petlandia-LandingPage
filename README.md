@@ -85,7 +85,81 @@ landpagePetlandia/
 - HTML5
 - CSS3 (variables, grid, flexbox, media queries)
 - JavaScript (vanilla, sin frameworks)
-- Alojamiento estático (Netlify, GitHub Pages, etc.)
+- Alojamiento estático en **Oracle Cloud Infrastructure (Object Storage)** delante de **Cloudflare** (CDN y caché)
+
+---
+
+## Arquitectura
+
+Vista general: código en GitHub → despliegue automático al bucket OCI → los visitantes llegan por Cloudflare (DNS/proxy/caché), que sirve el origen del bucket.
+
+```mermaid
+flowchart LR
+  subgraph repo["Repositorio"]
+    GH["GitHub\nHTML / CSS / JS / assets"]
+  end
+
+  subgraph ci["CI/CD"]
+    GA["GitHub Actions\n(push a master)"]
+  end
+
+  subgraph cloud["Nube"]
+    OCI["OCI Object Storage\nbucket estático\n(petlandia-clubhouse)"]
+    CF["Cloudflare\nCDN + caché + DNS"]
+  end
+
+  subgraph users["Visitantes"]
+    U["Navegador"]
+  end
+
+  GH -->|checkout| GA
+  GA -->|bulk-upload objetos| OCI
+  GA -->|purge_cache API| CF
+  U -->|HTTPS| CF
+  CF -->|origen / fetch| OCI
+```
+
+Resumen estructurado (útil para IA y checklists de infra):
+
+```yaml
+# petlandia-landing-architecture — resumen operativo
+name: Club House Petlandia Landing
+pattern: static_site
+runtime: none  # sin servidor de aplicaciones; solo archivos estáticos
+
+repository:
+  host: github
+  default_branch: master
+
+source_tree:
+  entry: index.html
+  styles: css/style.css
+  scripts: js/main.js
+  assets: assets/icons/, assets/gallery/
+
+delivery_pipeline:
+  trigger: push_to_master
+  ci: github_actions
+  workflow: .github/workflows/deploy-landing.yml
+  deploy_target:
+    provider: oracle_cloud_infrastructure
+    service: object_storage
+    bucket: petlandia-clubhouse
+    namespace: axnplbo9mhwv
+  post_deploy:
+    - cloudflare_cache_purge  # API zones/:id/purge_cache purge_everything
+
+edge_and_caching:
+  provider: cloudflare
+  role: dns_proxy_cdn_cache
+  cache_invalidation: automated_after_each_deploy
+
+external_integrations:
+  - whatsapp_deeplinks  # js/main.js
+  - google_maps_iframe  # index.html
+```
+
+**Secrets de GitHub Actions (despliegue):** OCI (`OCI_USER_OCID`, `OCI_FINGERPRINT`, `OCI_TENANCY_OCID`, `OCI_REGION`, `OCI_KEY_FILE`). **Post-despliegue:** Cloudflare `CLOUDFLARE_ZONE_ID`, `CLOUDFLARE_API_TOKEN` (permiso *Cache Purge* en la zona).
 
 ---
 
