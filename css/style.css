@@ -246,13 +246,12 @@
   }
 
   .footer__location,
-  .footer__hours,
-  .footer__map-link {
+  .footer__hours {
     font-size: 0.85rem;
   }
 
-  .how-to-arrive__map iframe {
-    min-height: 220px;
+  .footer__map iframe {
+    min-height: 180px;
   }
 
   .floating-cta {
@@ -342,7 +341,6 @@ body {
   left: 0;
   right: 0;
   z-index: 100;
-  overflow: visible;
   background: linear-gradient(180deg, var(--background-base) 0%, var(--pop-lila) 100%);
   box-shadow: 0 2px 20px rgba(0, 128, 128, 0.15);
   border-bottom: 4px solid var(--pop-pink);
@@ -352,13 +350,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0.85rem 1.25rem;
   min-height: 115px;
-  position: relative;
-  overflow: visible;
 }
 
 .header__logo {
@@ -383,197 +378,47 @@ body {
   }
 }
 
-/* Nav — agrupa Huéspedes (canino / felino), panel móvil y dropdown escritorio */
-.nav {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  min-width: 0;
-}
-
 .nav__list {
   display: none;
   list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 0.35rem;
-  align-items: stretch;
-}
-
-.nav__item {
-  list-style: none;
-}
-
-.nav__item--dropdown {
-  position: relative;
+  gap: 1.5rem;
 }
 
 .nav__link {
-  display: inline-flex;
-  align-items: center;
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
-  font-size: 0.9rem;
   color: var(--dark-text);
-  padding: 0.45rem 0.65rem;
-  border-radius: 999px;
-  transition: color 0.2s, background 0.2s, transform 0.2s;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
 .nav__link:hover {
   color: var(--pop-pink);
-  background: rgba(255, 255, 255, 0.45);
   transform: translateY(-1px);
 }
 
 .nav__link:focus-visible {
   outline: 2px solid var(--pop-pink);
-  outline-offset: 3px;
-}
-
-.nav__link[aria-current="page"] {
-  color: var(--pop-pink);
-  background: rgba(255, 20, 147, 0.12);
-  font-weight: 700;
-}
-
-.nav__link--accent {
-  background: rgba(255, 20, 147, 0.18);
-  border: 1px solid rgba(255, 20, 147, 0.35);
-}
-
-.nav__link--accent:hover {
-  background: rgba(255, 20, 147, 0.28);
-  color: var(--dark-text);
-}
-
-/* Disclosure: Huéspedes */
-.nav__details {
-  position: relative;
-}
-
-.nav__summary {
-  list-style: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--dark-text);
-  padding: 0.45rem 0.65rem;
-  border-radius: 999px;
-  transition: color 0.2s, background 0.2s;
-  user-select: none;
-}
-
-.nav__summary::-webkit-details-marker {
-  display: none;
-}
-
-.nav__summary::marker {
-  content: "";
-}
-
-.nav__summary::after {
-  content: "";
-  width: 0.4em;
-  height: 0.4em;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg) translateY(-0.08em);
-  transition: transform 0.2s ease;
-  opacity: 0.85;
-}
-
-.nav__details[open] > .nav__summary {
-  color: var(--pop-pink);
-  background: rgba(255, 255, 255, 0.45);
-}
-
-.nav__details[open] > .nav__summary::after {
-  transform: rotate(225deg) translateY(0.12em);
-}
-
-.nav__summary:hover {
-  color: var(--pop-pink);
-  background: rgba(255, 255, 255, 0.35);
-}
-
-.nav__summary:focus-visible {
-  outline: 2px solid var(--pop-pink);
-  outline-offset: 3px;
-  border-radius: 999px;
-}
-
-.nav__sublist {
-  list-style: none;
-  margin: 0.35rem 0 0;
-  padding: 0;
-}
-
-.nav__sublink {
-  width: 100%;
-  justify-content: flex-start;
-  font-weight: 600;
+  outline-offset: 4px;
 }
 
 .header__menu-btn {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  width: 44px;
-  height: 44px;
-  background: rgba(255, 255, 255, 0.35);
-  border: 2px solid rgba(0, 128, 128, 0.2);
-  border-radius: 12px;
+  gap: 5px;
+  background: none;
+  border: none;
   cursor: pointer;
-  flex-shrink: 0;
-  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
-}
-
-.header__menu-btn:hover {
-  background: rgba(255, 255, 255, 0.55);
-  border-color: rgba(255, 20, 147, 0.35);
-}
-
-.header__menu-btn:focus-visible {
-  outline: 2px solid var(--pop-pink);
-  outline-offset: 3px;
+  padding: 0.5rem;
 }
 
 .header__menu-bar {
-  width: 22px;
+  width: 24px;
   height: 3px;
   background: var(--dark-text);
   border-radius: 2px;
-  transition: transform 0.25s ease, opacity 0.2s ease;
-  transform-origin: center;
+  transition: transform 0.3s;
 }
 
-.header.nav-open .header__menu-btn {
-  background: rgba(255, 20, 147, 0.15);
-  border-color: var(--pop-pink);
-}
-
-.header.nav-open .header__menu-bar:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.header.nav-open .header__menu-bar:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-
-.header.nav-open .header__menu-bar:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-/* Panel móvil */
 .header.nav-open .nav__list {
   display: flex;
   flex-direction: column;
@@ -581,140 +426,17 @@ body {
   top: 100%;
   left: 0;
   right: 0;
-  max-height: min(78vh, 540px);
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  background: linear-gradient(180deg, var(--pop-lila) 0%, #f3f0ff 100%);
-  padding: 0.75rem 1rem 1.25rem;
-  margin: 0;
-  box-shadow: 0 12px 40px rgba(0, 128, 128, 0.18);
-  border-bottom: 4px solid var(--pop-pink);
-  gap: 0.2rem;
-  align-items: stretch;
-}
-
-.header.nav-open .nav__link {
-  padding: 0.75rem 1rem;
-  border-radius: 14px;
-  width: 100%;
-  justify-content: flex-start;
-  font-size: 1rem;
-}
-
-.header.nav-open .nav__summary {
-  padding: 0.75rem 1rem;
-  border-radius: 14px;
-  width: 100%;
-  font-size: 1rem;
-}
-
-.header.nav-open .nav__sublist {
-  margin: 0.15rem 0 0.5rem;
-  padding: 0.35rem 0 0.35rem 0.85rem;
-  border-left: 3px solid var(--pop-pink);
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 0 12px 12px 0;
-}
-
-.header.nav-open .nav__sublink {
-  padding: 0.65rem 0.85rem;
+  background: var(--pop-lila);
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 128, 128, 0.2);
 }
 
 @media (min-width: 768px) {
   .nav__list {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0.25rem 0.35rem;
-    row-gap: 0.35rem;
   }
-
-  .nav__link {
-    padding: 0.4rem 0.55rem;
-    font-size: 0.82rem;
-  }
-
-  .nav__summary {
-    padding: 0.4rem 0.55rem;
-    font-size: 0.82rem;
-  }
-
-  .nav__sublist {
-    position: absolute;
-    top: calc(100% + 0.35rem);
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 0;
-    min-width: 220px;
-    padding: 0.4rem;
-    background: #fff;
-    border-radius: 16px;
-    border: 2px solid rgba(0, 128, 128, 0.1);
-    box-shadow: 0 12px 36px rgba(0, 80, 80, 0.18);
-    z-index: 120;
-  }
-
-  .nav__sublink {
-    width: auto;
-    padding: 0.55rem 0.85rem;
-    border-radius: 12px;
-    font-size: 0.9rem;
-  }
-
-  .nav__sublink:hover {
-    background: var(--pop-lila);
-    color: var(--dark-text);
-  }
-
   .header__menu-btn {
     display: none;
-  }
-}
-
-@media (min-width: 1024px) {
-  .nav__link {
-    font-size: 0.9rem;
-    padding: 0.45rem 0.7rem;
-  }
-
-  .nav__summary {
-    font-size: 0.9rem;
-    padding: 0.45rem 0.7rem;
-  }
-
-  .nav__list {
-    gap: 0.35rem 0.5rem;
-  }
-}
-
-/* Landings hotel canino / guardería felina: espacio bajo header fijo (logo + borde + nav) */
-main.landing-subpage-main {
-  padding-top: calc(7.75rem + env(safe-area-inset-top, 0px));
-}
-
-@media (min-width: 768px) {
-  main.landing-subpage-main {
-    padding-top: calc(10.75rem + env(safe-area-inset-top, 0px));
-  }
-}
-
-@media (min-width: 1024px) {
-  main.landing-subpage-main {
-    padding-top: calc(11.25rem + env(safe-area-inset-top, 0px));
-  }
-}
-
-main.landing-subpage-main > .why-us__intro .section-title:first-child,
-main.landing-subpage-main > article .section-title:first-child {
-  scroll-margin-top: calc(6rem + env(safe-area-inset-top, 0px));
-}
-
-@media (min-width: 768px) {
-  main.landing-subpage-main > .why-us__intro .section-title:first-child,
-  main.landing-subpage-main > article .section-title:first-child {
-    scroll-margin-top: calc(8.5rem + env(safe-area-inset-top, 0px));
   }
 }
 
@@ -733,12 +455,6 @@ main.landing-subpage-main > article .section-title:first-child {
   position: absolute;
   inset: 0;
   z-index: 0;
-}
-
-.hero__bg picture {
-  display: block;
-  width: 100%;
-  height: 100%;
 }
 
 .hero__bg img {
@@ -763,26 +479,6 @@ main.landing-subpage-main > article .section-title:first-child {
 
 .hero__title {
   margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.hero__heading-text {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: clamp(1.15rem, 4vw, 1.5rem);
-  line-height: 1.35;
-  color: var(--text-primary);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
-  max-width: 22em;
-  margin: 0 auto;
-}
-
-.hero__title picture {
-  display: block;
-  margin: 0 auto;
 }
 
 .hero__title img {
@@ -858,18 +554,15 @@ main.landing-subpage-main > article .section-title:first-child {
   box-shadow: 0 6px 20px rgba(255, 20, 147, 0.5);
 }
 
-/* Secundario por defecto: legible en fondos claros (servicios, cómo llegar, landings SEO) */
 .btn--secondary {
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--dark-text);
-  border: 2px solid var(--dark-text);
-  box-shadow: 0 2px 12px rgba(0, 128, 128, 0.12);
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--text-primary);
+  border: 2px solid var(--text-primary);
+  backdrop-filter: blur(4px);
 }
 
 .btn--secondary:hover {
-  background: #fff;
-  border-color: var(--pop-pink);
-  color: var(--dark-text);
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .btn:focus-visible {
@@ -878,25 +571,6 @@ main.landing-subpage-main > article .section-title:first-child {
 }
 
 .btn--secondary:focus-visible {
-  outline-color: var(--dark-text);
-}
-
-/* Sobre el hero oscuro: mantener texto y borde claros */
-.hero__cta .btn--secondary {
-  background: rgba(255, 255, 255, 0.25);
-  color: var(--text-primary);
-  border: 2px solid var(--text-primary);
-  backdrop-filter: blur(4px);
-  box-shadow: none;
-}
-
-.hero__cta .btn--secondary:hover {
-  background: rgba(255, 255, 255, 0.35);
-  border-color: var(--text-primary);
-  color: var(--text-primary);
-}
-
-.hero__cta .btn--secondary:focus-visible {
   outline-color: white;
 }
 
@@ -1130,30 +804,6 @@ main.landing-subpage-main > article .section-title:first-child {
   opacity: 0.9;
   margin-bottom: 1rem;
   flex: 1;
-}
-
-.card picture {
-  width: 100%;
-  margin-top: auto;
-  display: block;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.card picture .card__img {
-  margin-top: 0;
-}
-
-.card-flip__back picture {
-  width: 100%;
-  display: block;
-  border-radius: 16px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-
-.card-flip__back picture .card__back-img {
-  margin-bottom: 0;
 }
 
 .card__img,
@@ -1576,12 +1226,6 @@ main.landing-subpage-main > article .section-title:first-child {
   min-height: 280px;
 }
 
-.spaces__card picture {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
 .spaces__card img {
   width: 100%;
   height: 100%;
@@ -1772,61 +1416,6 @@ main.landing-subpage-main > article .section-title:first-child {
   border-radius: 9999px;
 }
 
-/* Bloques SEO: guardería felina destacada + cómo llegar */
-.felina-highlight {
-  background: linear-gradient(180deg, rgba(152, 255, 152, 0.2) 0%, transparent 100%);
-}
-
-.felina-highlight__inner {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.felina-highlight__text {
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
-  line-height: 1.65;
-}
-
-.felina-highlight__text a {
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.how-to-arrive {
-  padding: 3rem 1rem;
-  background: rgba(0, 229, 255, 0.12);
-}
-
-.how-to-arrive__inner {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.how-to-arrive__text {
-  margin-bottom: 1rem;
-  line-height: 1.65;
-}
-
-.how-to-arrive__cta {
-  margin: 1.5rem 0 1rem;
-  text-align: center;
-}
-
-.how-to-arrive__map {
-  margin-top: 1.25rem;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 128, 128, 0.15);
-}
-
-.how-to-arrive__map iframe {
-  display: block;
-  width: 100%;
-  min-height: 280px;
-}
-
 /* Footer - Deep purple, brick texture hint */
 .footer {
   background: var(--deep-purple);
@@ -1845,8 +1434,7 @@ main.landing-subpage-main > article .section-title:first-child {
 
 @media (min-width: 768px) {
   .footer__inner {
-    grid-template-columns: 1.25fr 1fr;
-    align-items: start;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -1858,21 +1446,15 @@ main.landing-subpage-main > article .section-title:first-child {
 }
 
 .footer__location,
-.footer__hours,
-.footer__map-link {
+.footer__hours {
   font-size: 0.9rem;
   opacity: 0.9;
 }
 
-.footer__map-link {
-  margin-top: 0.75rem;
-}
-
-.footer__map-link a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  color: var(--pop-mint);
-  font-weight: 600;
+.footer__map iframe {
+  width: 100%;
+  min-height: 200px;
+  border-radius: 24px;
 }
 
 .footer__social {
