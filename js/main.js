@@ -101,84 +101,24 @@
     window.open(url, '_blank', 'noopener,noreferrer');
   }
 
-  function debounce(fn, ms) {
-    let t;
-    return function debounced() {
-      clearTimeout(t);
-      t = setTimeout(fn, ms);
-    };
-  }
-
-  function setMobileMenuOpen(header, menuBtn, open) {
-    if (!header || !menuBtn) return;
-    header.classList.toggle('nav-open', open);
-    menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
-    document.body.style.overflow = open ? 'hidden' : '';
-  }
-
-  function closeAllNavDetails() {
-    document.querySelectorAll('.nav__details[open]').forEach((el) => {
-      el.removeAttribute('open');
-    });
-  }
-
   function init() {
-    // Mobile menu + dropdown Huéspedes (details/summary)
+    // Mobile menu toggle
     const header = document.querySelector('.header');
     const menuBtn = document.querySelector('.header__menu-btn');
     const navLinks = document.querySelectorAll('.nav__link');
-    const navDetails = document.querySelectorAll('.nav__details');
-
-    navDetails.forEach((details) => {
-      details.addEventListener('toggle', () => {
-        if (!details.open) return;
-        navDetails.forEach((other) => {
-          if (other !== details) other.removeAttribute('open');
-        });
-      });
-    });
-
     if (menuBtn && header) {
       menuBtn.addEventListener('click', () => {
-        const open = !header.classList.contains('nav-open');
-        setMobileMenuOpen(header, menuBtn, open);
+        const open = header.classList.toggle('nav-open');
+        menuBtn.setAttribute('aria-expanded', open);
       });
-
+      // Cerrar menú al hacer clic en un enlace (mejor UX en móvil)
       navLinks.forEach((link) => {
         link.addEventListener('click', () => {
-          closeAllNavDetails();
-          setMobileMenuOpen(header, menuBtn, false);
+          header.classList.remove('nav-open');
+          menuBtn.setAttribute('aria-expanded', 'false');
         });
       });
-
-      window.addEventListener(
-        'resize',
-        debounce(() => {
-          if (window.matchMedia('(min-width: 768px)').matches) {
-            setMobileMenuOpen(header, menuBtn, false);
-          }
-        }, 150)
-      );
     }
-
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.nav__item--dropdown')) {
-        closeAllNavDetails();
-      }
-      if (header && menuBtn && !header.contains(e.target)) {
-        setMobileMenuOpen(header, menuBtn, false);
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key !== 'Escape') return;
-      closeAllNavDetails();
-      if (header && menuBtn && header.classList.contains('nav-open')) {
-        setMobileMenuOpen(header, menuBtn, false);
-        menuBtn.focus();
-      }
-    });
 
     // Lead form - validación en tiempo real y submit
     const form = document.getElementById('lead-form');
