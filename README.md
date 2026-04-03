@@ -92,7 +92,7 @@ source_tree:
 delivery_pipeline:
   trigger: push_to_master
   ci: github_actions
-  workflow: .github/workflows/deploy-landing.yml
+  workflow: .github/workflows/deployLanding.yml
   deploy_target:
     provider: oracle_cloud_infrastructure
     service: object_storage
